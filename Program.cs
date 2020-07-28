@@ -18,7 +18,12 @@ namespace UsedCarLot
             CarLot.PopulateLot(this);//auto-adds to Lot
         }
         public Car()
-        { CarLot.PopulateLot(this); } //auto-adds to Lot 
+        {
+            Make = "No Make Assigned";
+            Model = "No Model Assigned";
+            Year = 2000;
+            Price = 0;
+            CarLot.PopulateLot(this); } //auto-adds to Lot 
         public override string ToString()
         {  return $"{Make}  {Model}  {Year}  {Price}"; }
     }
@@ -62,9 +67,9 @@ namespace UsedCarLot
             Console.Write("Please enter the Year of the car to add: ");
             int newYear = Int32.Parse(Console.ReadLine());
             Console.Write("Please enter the Price of the car to add: ");
-            double newPrice = Int32.Parse(Console.ReadLine());
+            double newPrice = Double.Parse(Console.ReadLine());
             Console.Write("Please enter the Mileage of the car to add: ");
-            double newMileage = Int32.Parse(Console.ReadLine());
+            double newMileage = Double.Parse(Console.ReadLine());
             new Used(newMake, newModel, newYear, newPrice, newMileage);
         }
         public List<Car> ListCars() //menu
